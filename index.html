@@ -33,17 +33,17 @@
         const computerChoice = getComputerChoice();
         let win = `You won! ${playerChoice} beats ${computerChoice}`;
         let lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+        const draw = `Tie! You both chose ${computerChoice}`;
 
         function playRound(playerChoice, computerChoice) {
+
             let playerChoiceLower = playerChoice.toLocaleLowerCase();
             let computerChoiceLower = computerChoice.toLowerCase();
-            let round = playerChoiceLower == computerChoiceLower;
-            switch(round) {
-                case playerChoiceLower == rock.toLowerCase() && computerChoiceLower == paper.toLowerCase():
-                    return lose
-                    break;
-            }
+
+            
+            
         }
+        console.log(playRound(playerChoice, computerChoice));
         
     </script>
 
