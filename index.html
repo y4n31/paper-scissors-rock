@@ -29,7 +29,7 @@
             return choice;
         }
 
-        const playerChoice = prompt('Choose your gesture (Rock / Paper / Scissors)');
+        let playerChoice = prompt('Choose your gesture (Rock / Paper / Scissors)');
         const computerChoice = getComputerChoice();
         let win = `You won! ${playerChoice} beats ${computerChoice}`;
         let lose = `You lost! ${computerChoice} beats ${playerChoice}`;
@@ -52,9 +52,10 @@
             else if (playerChoiceLower == computerChoiceLower) {
                 return draw;
             }
-            else if (playerChoiceLower !== rock.toLowerCase() && playerChoiceLower !== paper.toLowerCase() && playerChoiceLower !== scissors.toLowerCase()) {
-                prompt('Choose one of the three gestures!');
-            }
+            //else if (playerChoiceLower !== rock.toLowerCase() && playerChoiceLower !== paper.toLowerCase() && playerChoiceLower !== scissors.toLowerCase()) {
+                //playerChoiceLower.toLowerCase() = prompt('Choose one of the three gestures!');
+                
+            //}
             else {
                 return win;
             }
