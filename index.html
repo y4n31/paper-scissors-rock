@@ -8,7 +8,27 @@
 <body>
     
     <script>
-        
+        //console.log(Math.floor(Math.random()*100+5))
+
+        const rock = 'Rock';
+        const paper = 'Paper';
+        const scissors = 'Scissors';
+
+        function getComputerChoice() {
+            let choice = Math.floor(Math.random()*100+5);
+
+            if (choice < 35) {
+                choice = rock;
+            }
+            else if (choice >= 35 && choice < 70) {
+                choice = paper;
+            }
+            else if (choice >= 70 && choice < 105) {
+                choice = scissors;
+            }
+            console.log(choice);
+        }
+        getComputerChoice()
     </script>
 
 </body>
