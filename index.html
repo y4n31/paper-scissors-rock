@@ -31,10 +31,20 @@
 
         const playerChoice = prompt('Choose your gesture (Rock / Paper / Scissors)');
         const computerChoice = getComputerChoice();
+        let win = `You won! ${playerChoice} beats ${computerChoice}`;
+        let lose = `You lost! ${computerChoice} beats ${playerChoice}`;
 
         function playRound(playerChoice, computerChoice) {
-
+            let playerChoiceLower = playerChoice.toLocaleLowerCase();
+            let computerChoiceLower = computerChoice.toLowerCase();
+            let round = playerChoiceLower == computerChoiceLower;
+            switch(round) {
+                case playerChoiceLower == rock.toLowerCase() && computerChoiceLower == paper.toLowerCase():
+                    return lose
+                    break;
+            }
         }
+        
     </script>
 
 </body>
