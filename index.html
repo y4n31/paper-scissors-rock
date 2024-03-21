@@ -40,7 +40,24 @@
             let playerChoiceLower = playerChoice.toLocaleLowerCase();
             let computerChoiceLower = computerChoice.toLowerCase();
 
-            
+            if(playerChoiceLower == rock.toLowerCase() && computerChoiceLower == paper.toLowerCase()) {
+                return lose;
+            }
+            else if(playerChoiceLower == paper.toLowerCase() && computerChoiceLower == scissors.toLowerCase()) {
+                return lose;
+            }
+            else if(playerChoiceLower == scissors.toLowerCase() && computerChoiceLower == rock.toLowerCase()) {
+                return lose;
+            }
+            else if (playerChoiceLower == computerChoiceLower) {
+                return draw;
+            }
+            else if (playerChoiceLower !== rock.toLowerCase() && playerChoiceLower !== paper.toLowerCase() && playerChoiceLower !== scissors.toLowerCase()) {
+                prompt('Choose one of the three gestures!');
+            }
+            else {
+                return win;
+            }
             
         }
         console.log(playRound(playerChoice, computerChoice));
