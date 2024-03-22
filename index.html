@@ -32,18 +32,18 @@
         let playerChoice; 
         let computerChoice;
 
-        //let win = `You won! ${playerChoice} beats ${computerChoice}`;
-        //let lose = `You lost! ${computerChoice} beats ${playerChoice}`;
-        //const draw = `Tie! You both chose ${computerChoice}`;
+        let win = `You won! ${playerChoice} beats ${computerChoice}`;
+        let lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+        let draw = `Tie! You both chose ${computerChoice}`;
         
         function playRound(playerChoice, computerChoice) {
 
             computerChoice = getComputerChoice();
             playerChoice = prompt('Choose your gesture (Rock / Paper / Scissors)');
             
-            let win = `You won! ${playerChoice} beats ${computerChoice}`;
-            let lose = `You lost! ${computerChoice} beats ${playerChoice}`;
-            const draw = `Tie! You both chose ${computerChoice}`;
+            win = `You won! ${playerChoice} beats ${computerChoice}`;
+            lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+            draw = `Tie! You both chose ${computerChoice}`;
 
             let playerChoiceLower = playerChoice.toLocaleLowerCase();
             let computerChoiceLower = computerChoice.toLowerCase();
@@ -72,8 +72,8 @@
         }
         //console.log(playRound(playerChoice, computerChoice));
 
-        let playerScore;
-        let computerScore;
+        let playerScore = 0;
+        let computerScore = 0;
 
         function playGame() {
             for(let i = 0; i < 5; i++) {
@@ -81,7 +81,13 @@
                 console.log(playRound(playerChoice, computerChoice));
             }
             
-            
+            if(playRound == win) {
+                playerScore++;
+            }
+            else if(playRound == lose) {
+                computerScore++;
+            }
+            console.log(playerScore)
         }
         playGame();
                 
