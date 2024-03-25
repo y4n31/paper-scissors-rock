@@ -72,22 +72,39 @@
         }
         //console.log(playRound(playerChoice, computerChoice));
 
+        //variables to record the score 
         let playerScore = 0;
         let computerScore = 0;
 
+        let returnVal;
+
         function playGame() {
+            // loop to play 5 rounds
             for(let i = 0; i < 5; i++) {
-                //playRound(playerChoice, computerChoice);
-                console.log(playRound(playerChoice, computerChoice));
-            }
-            
-            if(playRound == win) {
+                returnVal = playRound(playerChoice, computerChoice);        //put playRound return value into variable
+                console.log(returnVal)      //print result of each round (return value of playRound)
+
+                // if statement to record score after each round
+                if(returnVal == win) {
                 playerScore++;
-            }
-            else if(playRound == lose) {
+                }
+                else if(returnVal == lose) {
                 computerScore++;
+                }
+            }         
+            // console.log(playerScore)
+            // console.log(computerScore)
+
+            // if tstement to anounce the winner
+            if(playerScore < computerScore) {
+                console.log(`Computer won with the score of ${computerScore}`)
             }
-            console.log(playerScore)
+            else if(playerScore > computerScore) {
+                console.log( `Big win! You beat the computer with the score of ${playerScore}`);
+            }
+            else {
+                console.log('Tie! You both gained the same score')
+            }
         }
         playGame();
                 
