@@ -39,7 +39,8 @@
         function playRound(playerChoice, computerChoice) {
 
             computerChoice = getComputerChoice();
-            playerChoice = prompt('Choose your gesture (Rock / Paper / Scissors)');
+            playerChoice = capitilize(prompt('Choose your gesture (Rock / Paper / Scissors)'));
+
             
             win = `You won! ${playerChoice} beats ${computerChoice}`;
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
@@ -63,7 +64,7 @@
             else if (playerChoiceLower !== rock.toLowerCase() && playerChoiceLower !== paper.toLowerCase() && playerChoiceLower !== scissors.toLowerCase()) {
                 //playerChoiceLower.toLowerCase() = prompt('Choose one of the three gestures!');
                 //alert('Refresh the page and choose one of the three gestures!')
-                playGame();            
+                playGame();
             }
             else {
                 return win;
@@ -82,6 +83,7 @@
             // loop to play 5 rounds
             for(let i = 0; i < 5; i++) {
                 returnVal = playRound(playerChoice, computerChoice);        //put playRound return value into variable
+
                 console.log(returnVal)      //print result of each round (return value of playRound)
 
                 // if statement to record score after each round
@@ -95,7 +97,7 @@
             // console.log(playerScore)
             // console.log(computerScore)
 
-            // if tstement to announce the winner
+            // if statement to announce the winner
             if(playerScore < computerScore) {
                 console.log(`Computer won with the score of ${computerScore}`)
             }
@@ -107,6 +109,15 @@
             }
         }
         playGame();
+
+        // function to make the first letter of user input capital and other letters lower case
+        function capitilize (string) {
+            string = string.toLowerCase();
+            let firstLetter = string.charAt(0);
+            let capitalFirst = firstLetter.toUpperCase();
+
+            return string.replace(firstLetter, capitalFirst);
+        } 
                 
     </script>
 
