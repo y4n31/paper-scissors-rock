@@ -8,8 +8,6 @@
 <body>
     
     <script>
-        //console.log(Math.floor(Math.random()*100+5))
-
         const rock = 'Rock';
         const paper = 'Paper';
         const scissors = 'Scissors';
@@ -62,8 +60,6 @@
                 return draw;
             }
             else if (playerChoiceLower !== rock.toLowerCase() && playerChoiceLower !== paper.toLowerCase() && playerChoiceLower !== scissors.toLowerCase()) {
-                //playerChoiceLower.toLowerCase() = prompt('Choose one of the three gestures!');
-                //alert('Refresh the page and choose one of the three gestures!')
                 playGame();
             }
             else {
@@ -71,7 +67,6 @@
             }
             
         }
-        //console.log(playRound(playerChoice, computerChoice));
 
         //variables to record the score 
         let playerScore = 0;
@@ -93,9 +88,7 @@
                 else if(returnVal == lose) {
                 computerScore++;
                 }
-            }         
-            // console.log(playerScore)
-            // console.log(computerScore)
+            }
 
             // if statement to announce the winner
             if(playerScore < computerScore) {
