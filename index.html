@@ -7,10 +7,18 @@
 </head>
 <body>
     
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+
     <script>
         const rock = 'Rock';
         const paper = 'Paper';
         const scissors = 'Scissors';
+
+        const rockButton = document.querySelector('#rock');
+        const paperButton = document.querySelector('#paper');
+        const scissorsButton = document.querySelector('#scissors');
 
         function getComputerChoice() {
             let choice = Math.floor(Math.random()*100+5);
@@ -74,34 +82,34 @@
 
         let returnVal;
 
-        function playGame() {
-            // loop to play 5 rounds
-            for(let i = 0; i < 5; i++) {
-                returnVal = playRound(playerChoice, computerChoice);        //put playRound return value into variable
+        // function playGame() {
+        //     // loop to play 5 rounds
+        //     for(let i = 0; i < 5; i++) {
+        //         returnVal = playRound(playerChoice, computerChoice);        //put playRound return value into variable
 
-                console.log(returnVal)      //print result of each round (return value of playRound)
+        //         console.log(returnVal)      //print result of each round (return value of playRound)
 
-                // if statement to record score after each round
-                if(returnVal == win) {
-                playerScore++;
-                }
-                else if(returnVal == lose) {
-                computerScore++;
-                }
-            }
+        //         // if statement to record score after each round
+        //         if(returnVal == win) {
+        //         playerScore++;
+        //         }
+        //         else if(returnVal == lose) {
+        //         computerScore++;
+        //         }
+        //     }
 
-            // if statement to announce the winner
-            if(playerScore < computerScore) {
-                console.log(`Computer won with the score of ${computerScore}`)
-            }
-            else if(playerScore > computerScore) {
-                console.log( `Big win! You beat the computer with the score of ${playerScore}`);
-            }
-            else {
-                console.log('Tie! You both gained the same score')
-            }
-        }
-        playGame();
+        //     // if statement to announce the winner
+        //     if(playerScore < computerScore) {
+        //         console.log(`Computer won with the score of ${computerScore}`)
+        //     }
+        //     else if(playerScore > computerScore) {
+        //         console.log( `Big win! You beat the computer with the score of ${playerScore}`);
+        //     }
+        //     else {
+        //         console.log('Tie! You both gained the same score')
+        //     }
+        // }
+        // playGame();
 
         // function to make the first letter of user input capital and other letters lower case
         function capitilize (string) {
