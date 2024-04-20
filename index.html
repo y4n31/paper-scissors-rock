@@ -20,7 +20,7 @@
         const paperButton = document.querySelector('#paper');
         const scissorsButton = document.querySelector('#scissors');
 
-        rockButton.addEventListener('click', playRound);
+        
 
         function getComputerChoice() {
             let choice = Math.floor(Math.random()*100+5);
@@ -40,43 +40,59 @@
         let playerChoice; 
         let computerChoice;
 
-        let win = `You won! ${playerChoice} beats ${computerChoice}`;
-        let lose = `You lost! ${computerChoice} beats ${playerChoice}`;
-        let draw = `Tie! You both chose ${computerChoice}`;
-        
-        function playRound(playerChoice, computerChoice) {
+        let win 
+        let lose
+        let draw
 
+        rockButton.addEventListener('click', function(event) { 
             computerChoice = getComputerChoice();
-            playerChoice = capitilize(prompt('Choose your gesture (Rock / Paper / Scissors)'));
-
-            
-            win = `You won! ${playerChoice} beats ${computerChoice}`;
-            lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+            playerChoice = rock;
             draw = `Tie! You both chose ${computerChoice}`;
+            lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+            win = `You won! ${playerChoice} beats ${computerChoice}`;
+            if(computerChoice == rock){
+                return console.log(draw);
+            } else if(computerChoice == paper) {
+                return console.log(lose);
+            } else {
+                return console.log(win);
+            }
+        });
 
-            let playerChoiceLower = playerChoice.toLocaleLowerCase();
-            let computerChoiceLower = computerChoice.toLowerCase();
+        // function playRound(playerChoice, computerChoice) {
 
-            if(playerChoiceLower == rock.toLowerCase() && computerChoiceLower == paper.toLowerCase()) {
-                return lose;
-            }
-            else if(playerChoiceLower == paper.toLowerCase() && computerChoiceLower == scissors.toLowerCase()) {
-                return lose;
-            }
-            else if(playerChoiceLower == scissors.toLowerCase() && computerChoiceLower == rock.toLowerCase()) {
-                return lose;
-            }
-            else if (playerChoiceLower == computerChoiceLower) {
-                return draw;
-            }
-            else if (playerChoiceLower !== rock.toLowerCase() && playerChoiceLower !== paper.toLowerCase() && playerChoiceLower !== scissors.toLowerCase()) {
-                playGame();
-            }
-            else {
-                return win;
-            }
+        //     computerChoice = getComputerChoice();
             
-        }
+        //     //playerChoice = capitilize(prompt('Choose your gesture (Rock / Paper / Scissors)'));
+
+            
+        //     win = `You won! ${playerChoice} beats ${computerChoice}`;
+        //     lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+        //     draw = `Tie! You both chose ${computerChoice}`;
+
+        //     let playerChoiceLower = playerChoice.toLowerCase();
+        //     let computerChoiceLower = computerChoice.toLowerCase();
+
+        //     if(playerChoiceLower == rock.toLowerCase() && computerChoiceLower == paper.toLowerCase()) {
+        //         return lose;
+        //     }
+        //     else if(playerChoiceLower == paper.toLowerCase() && computerChoiceLower == scissors.toLowerCase()) {
+        //         return lose;
+        //     }
+        //     else if(playerChoiceLower == scissors.toLowerCase() && computerChoiceLower == rock.toLowerCase()) {
+        //         return lose;
+        //     }
+        //     else if (playerChoiceLower == computerChoiceLower) {
+        //         return draw;
+        //     }
+        //     else if (playerChoiceLower !== rock.toLowerCase() && playerChoiceLower !== paper.toLowerCase() && playerChoiceLower !== scissors.toLowerCase()) {
+        //         playGame();
+        //     }
+        //     else {
+        //         return win;
+        //     }
+            
+        // }
 
         //variables to record the score 
         let playerScore = 0;
