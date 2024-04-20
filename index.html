@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <span id="result-announcer"></span>
+        <span id="result-announcer">Choose your gest!</span>
         <div id="score">
             <div class="title">
                 <span id="score-title">Player</span>
@@ -37,6 +37,7 @@
         const scissorsButton = document.querySelector('#scissors');
         const playerSpan = document.querySelector('#player-score');
         const computerSpan = document.querySelector('#computer-score');
+        const resultSpan = document.querySelector('#result-announcer');
 
         function getComputerChoice() {
             let choice = Math.floor(Math.random()*100+5);
@@ -67,13 +68,15 @@
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
             if(computerChoice == rock){
-                return console.log(draw);
+                resultSpan.textContent = draw;
             } else if(computerChoice == paper) {
                 computerScore++;
                 computerSpan.textContent = computerScore;
+                resultSpan.textContent = lose;
             } else {
                 playerScore++;
                 playerSpan.textContent = playerScore;
+                resultSpan.textContent = win;
             }
         });
 
@@ -84,13 +87,15 @@
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
             if(computerChoice == paper){
-                return console.log(draw);
+                resultSpan.textContent = draw;
             } else if(computerChoice == scissors) {
                 computerScore++;
                 computerSpan.textContent = computerScore;
+                resultSpan.textContent = lose;
             } else {
                 playerScore++;
                 playerSpan.textContent = playerScore;
+                resultSpan.textContent = win;
             }
         });
 
@@ -102,13 +107,15 @@
             win = `You won! ${playerChoice} beats ${computerChoice}`;
 
             if(computerChoice == scissors){
-                return console.log(draw);
+                resultSpan.textContent = draw;
             } else if(computerChoice == rock) {
                 computerScore++;
                 computerSpan.textContent = computerScore;
+                resultSpan.textContent = lose;
             } else {
                 playerScore++;
                 playerSpan.textContent = playerScore;
+                resultSpan.textContent = win;
             }
         });
 
