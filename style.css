@@ -21,7 +21,8 @@ ul {
 
 button {
     width: 150px;
-    height: 100px
+    height: 100px;
+    font-size: 30px;
 }
 
 li {
@@ -33,4 +34,23 @@ li {
     border: solid black;
     width: 520px;
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-score, #computer-score {
+    font-size: 50px;
+}
+
+#score-title {
+    font-size: 40px;
+}
+
+.title, .running-score {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
