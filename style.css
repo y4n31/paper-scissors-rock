@@ -30,6 +30,11 @@ li {
     padding: 10px;
 }
 
+#result-announcer {
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
 #score {
     border: solid black;
     width: 520px;
