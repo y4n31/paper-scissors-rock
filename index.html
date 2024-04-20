@@ -40,9 +40,9 @@
         let playerChoice; 
         let computerChoice;
 
-        let win 
-        let lose
-        let draw
+        let win;
+        let lose;
+        let draw;
 
         rockButton.addEventListener('click', function(event) { 
             computerChoice = getComputerChoice();
@@ -53,6 +53,37 @@
             if(computerChoice == rock){
                 return console.log(draw);
             } else if(computerChoice == paper) {
+                return console.log(lose);
+            } else {
+                return console.log(win);
+            }
+        });
+
+        paperButton.addEventListener('click', function(event) { 
+            computerChoice = getComputerChoice();
+            playerChoice = paper;
+            draw = `Tie! You both chose ${computerChoice}`;
+            lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+            win = `You won! ${playerChoice} beats ${computerChoice}`;
+            if(computerChoice == paper){
+                return console.log(draw);
+            } else if(computerChoice == scissors) {
+                return console.log(lose);
+            } else {
+                return console.log(win);
+            }
+        });
+
+        scissorsButton.addEventListener('click', function(event) { 
+            computerChoice = getComputerChoice();
+            playerChoice = scissors;
+            draw = `Tie! You both chose ${computerChoice}`;
+            lose = `You lost! ${computerChoice} beats ${playerChoice}`;
+            win = `You won! ${playerChoice} beats ${computerChoice}`;
+
+            if(computerChoice == scissors){
+                return console.log(draw);
+            } else if(computerChoice == rock) {
                 return console.log(lose);
             } else {
                 return console.log(win);
