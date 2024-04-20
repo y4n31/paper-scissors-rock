@@ -15,8 +15,8 @@
                 <span id="score-title">Computer</span>
             </div>
             <div class="running-score">
-                <span id="player-score">1</span>
-                <span id="computer-score">1</span>
+                <span id="player-score">0</span>
+                <span id="computer-score">0</span>
             </div>
         </div>
         <ul id="play-buttons">
@@ -34,6 +34,8 @@
         const rockButton = document.querySelector('#rock');
         const paperButton = document.querySelector('#paper');
         const scissorsButton = document.querySelector('#scissors');
+        const playerSpan = document.querySelector('#player-score');
+        const computerSpan = document.querySelector('#computer-score');
 
         function getComputerChoice() {
             let choice = Math.floor(Math.random()*100+5);
@@ -68,7 +70,8 @@
             } else if(computerChoice == paper) {
                 return console.log(lose);
             } else {
-                return console.log(win);
+                playerScore++;
+                playerSpan.textContent = playerScore;
             }
         });
 
@@ -83,7 +86,8 @@
             } else if(computerChoice == scissors) {
                 return console.log(lose);
             } else {
-                return console.log(win);
+                playerScore++;
+                playerSpan.textContent = playerScore;
             }
         });
 
@@ -99,7 +103,8 @@
             } else if(computerChoice == rock) {
                 return console.log(lose);
             } else {
-                return console.log(win);
+                playerScore++;
+                playerSpan.textContent = playerScore;
             }
         });
 
