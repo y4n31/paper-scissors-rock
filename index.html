@@ -68,7 +68,8 @@
             if(computerChoice == rock){
                 return console.log(draw);
             } else if(computerChoice == paper) {
-                return console.log(lose);
+                computerScore++;
+                computerSpan.textContent = computerScore;
             } else {
                 playerScore++;
                 playerSpan.textContent = playerScore;
@@ -84,7 +85,8 @@
             if(computerChoice == paper){
                 return console.log(draw);
             } else if(computerChoice == scissors) {
-                return console.log(lose);
+                computerScore++;
+                computerSpan.textContent = computerScore;
             } else {
                 playerScore++;
                 playerSpan.textContent = playerScore;
@@ -101,7 +103,8 @@
             if(computerChoice == scissors){
                 return console.log(draw);
             } else if(computerChoice == rock) {
-                return console.log(lose);
+                computerScore++;
+                computerSpan.textContent = computerScore;
             } else {
                 playerScore++;
                 playerSpan.textContent = playerScore;
