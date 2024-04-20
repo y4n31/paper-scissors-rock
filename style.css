@@ -11,3 +11,26 @@
     justify-content: center;
     align-items: center;
 }
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    display: flex;
+}
+
+button {
+    width: 150px;
+    height: 100px
+}
+
+li {
+    margin: 0px;
+    padding: 10px;
+}
+
+#score {
+    border: solid black;
+    width: 520px;
+    height: 300px;
+}
