@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <span id="winner-announcer"></span>
         <span id="result-announcer">Choose your gest!</span>
         <div id="score">
             <div class="title">
@@ -38,6 +39,7 @@
         const playerSpan = document.querySelector('#player-score');
         const computerSpan = document.querySelector('#computer-score');
         const resultSpan = document.querySelector('#result-announcer');
+        const winnerSpan = document.querySelector('#winner-announcer');
 
         function getComputerChoice() {
             let choice = Math.floor(Math.random()*100+5);
@@ -60,6 +62,9 @@
         let win;
         let lose;
         let draw;
+
+        let playerScore = 0;
+        let computerScore = 0; 
 
         rockButton.addEventListener('click', function(event) { 
             computerChoice = getComputerChoice();
@@ -106,6 +111,12 @@
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
 
+            if(playerScore == 5) {
+            resultSpan.textContent = 'Victory! You have won!'
+        } else if(computerScore == 5) {
+            resultSpan.textContent = 'Lose! Computer has won!'
+        }    
+
             if(computerChoice == scissors){
                 resultSpan.textContent = draw;
             } else if(computerChoice == rock) {
@@ -119,9 +130,11 @@
             }
         });
 
-        //variables to record the score 
-        let playerScore = 0;
-        let computerScore = 0;               
+        // if(playerScore == 5) {
+        //     console.log('Player scored 5')
+        // } else if(computerScore == 5) {
+        //     console.log('Computer scored 5')
+        // }           
     </script>
 
 </body>

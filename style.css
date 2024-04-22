@@ -30,7 +30,7 @@ li {
     padding: 10px;
 }
 
-#result-announcer {
+#result-announcer, #winner-announcer {
     font-size: 40px;
     padding-bottom: 30px;
 }
