@@ -72,6 +72,7 @@
             draw = `Tie! You both chose ${computerChoice}`;
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
+            
             if(computerChoice == rock){
                 resultSpan.textContent = draw;
             } else if(computerChoice == paper) {
@@ -111,10 +112,10 @@
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
 
-            if(playerScore == 5) {
-            resultSpan.textContent = 'Victory! You have won!'
-        } else if(computerScore == 5) {
-            resultSpan.textContent = 'Lose! Computer has won!'
+            if(playerScore >= 5) {
+            winnerSpan.textContent = 'Victory! You have won!'
+        } else if(computerScore >= 5) {
+            winnerSpan.textContent = 'Lose! Computer has won!'
         }    
 
             if(computerChoice == scissors){
