@@ -73,6 +73,12 @@
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
             
+            if(playerSpan.textContent == 5) {
+                document.dispatchEvent('click')
+            } else if(computerSpan.textContent == 5) {
+                document.dispatchEvent('click')
+            }
+
             if(computerChoice == rock){
                 resultSpan.textContent = draw;
             } else if(computerChoice == paper) {
@@ -92,6 +98,13 @@
             draw = `Tie! You both chose ${computerChoice}`;
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
+
+            if(playerSpan.textContent == 5) {
+                document.dispatchEvent('click')
+            } else if(computerSpan.textContent == 5) {
+                document.dispatchEvent('click')
+            }
+
             if(computerChoice == paper){
                 resultSpan.textContent = draw;
             } else if(computerChoice == scissors) {
@@ -105,18 +118,18 @@
             }
         });
 
-        scissorsButton.addEventListener('click', function(event) { 
+        scissorsButton.addEventListener('click', function(event) {
             computerChoice = getComputerChoice();
             playerChoice = scissors;
             draw = `Tie! You both chose ${computerChoice}`;
             lose = `You lost! ${computerChoice} beats ${playerChoice}`;
             win = `You won! ${playerChoice} beats ${computerChoice}`;
 
-            if(playerScore >= 5) {
-            winnerSpan.textContent = 'Victory! You have won!'
-        } else if(computerScore >= 5) {
-            winnerSpan.textContent = 'Lose! Computer has won!'
-        }    
+            if(playerSpan.textContent == 5) {
+                document.dispatchEvent('click')
+            } else if(computerSpan.textContent == 5) {
+                document.dispatchEvent('click')
+            }
 
             if(computerChoice == scissors){
                 resultSpan.textContent = draw;
@@ -131,11 +144,21 @@
             }
         });
 
-        // if(playerScore == 5) {
-        //     console.log('Player scored 5')
-        // } else if(computerScore == 5) {
-        //     console.log('Computer scored 5')
-        // }           
+        document.addEventListener('click', function() {
+            if(playerSpan.textContent == 5) {
+                winnerSpan.textContent = 'Victory! You have won!'
+                resultSpan.textContent = 'Refresh the page to start a new game'
+            } else if(computerSpan.textContent == 5) {
+                winnerSpan.textContent = 'Lose! Computer has won!'
+                resultSpan.textContent = 'Refresh the page to start a new game'
+            }
+        })
+        // const myEvent = new Event("customEvent");
+        // scissorsButton.addEventListener("click", function (){
+        //     if(playerSpan.textContent == 5 || computerSpan.textContent == 5){
+        //         winnerSpan.textContent = 'Victory! You have won!'
+        //     }
+        // });        
     </script>
 
 </body>
